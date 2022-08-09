@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicon/apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{ asset('favicon/site.webmanifest')}}">
+        <link rel="mask-icon" href="{{ asset('favicon/safari-pinned-tab.svg" color="#5bbad5') }}">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+
+        {#Navbar#}
+
+        <main class="container-fluid">
+            {% block main %}
+                
+            {% endblock %}
+        </main>
+
+        {#footer#}
+
+    </body>
+</html>
