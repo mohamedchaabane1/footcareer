@@ -14,6 +14,13 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
+        {# début référencement naturel#}
+        <meta name="description" content="{% block description %} {% endblock %}">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="{% block keywords %} {% endblock %}">
+        <meta name="author" content="souley">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {# fin référencement naturel#}
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
