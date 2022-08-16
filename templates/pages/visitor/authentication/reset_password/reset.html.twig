@@ -1,0 +1,29 @@
+{% extends 'themes/theme_visitor.html.twig' %}
+
+{% block title %}Nouveau mot de passe{% endblock %}
+
+{% block main %}
+    <h1 class="text-center my-3 display-5 ">Nouveau mot de passe</h1>
+
+    <div class="container my-3">
+        <div class="col-md-6 mx-auto shadow bg-white p-4">
+        {{ form_start(resetForm) }}
+            <div class="mb-3">
+                    <label for="reset_form_password_first">Mot de passe :</label>
+                    <div class="text-danger">{{ form_errors(resetForm.password.first)}}</div>
+               {{ form_widget(resetForm.password.first, {'attr':{'class': "form-control"}})}}
+            </div>
+            <div class="mb-3">
+                    <label for="reset_form_password_second">Confirmation du mot de passe :</label>
+               {{ form_widget(resetForm.password.second, {'attr':{'class': "form-control"}})}}
+            </div>
+                
+            <div class="mb-3">     
+                <button class="btn btn-primary">Envoyer</button>
+             </div>
+                {{ form_end(resetForm) }}
+        </div>
+        </div>
+    </div>
+    
+{% endblock %}

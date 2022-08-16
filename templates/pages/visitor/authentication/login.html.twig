@@ -1,0 +1,58 @@
+{% extends 'themes/theme_visitor.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block main %}
+
+    <h1 class="text-center my-3 display-5">Connexion</h1>
+
+<div class="container my-3">
+   <div class="row">
+    <div class="col-md-6 mx-auto p-4 bg-white shadow">
+    <form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {#{% if app.user %}
+        <div class="mb-3">
+            Voue êtes connecter comme {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}#}
+
+    <div class="mb-3">
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    </div>
+    <div class="mb-3">
+    <label for="inputPassword">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+    </div>
+    <div class="mb-3">
+        <input type="hidden" name="_csrf_token" 
+            value="{{ csrf_token('authenticate') }}">
+
+        </div>
+    
+    <div class="mb-3">
+
+        {#See https://symfony.com/doc/current/section/security/remember_me.html #}
+
+            <label>
+                <input type="checkbox" name="_remember_me"> Se souvenir de moi
+            </label>  
+    </div>  
+    <div class="mb-3">
+    <button class="btn btn-primary" type="submit">Se connecter</button>
+    </div>    
+    </form>
+
+    <div class="text-center">
+        <a href="{{ path('visitor.authentication.forgot_password_request')}}">Mot de passe oublier?</a>
+    </div>
+    </div>
+   </div> 
+</div>
+
+{% endblock %}

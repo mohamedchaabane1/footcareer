@@ -1,0 +1,74 @@
+{% extends "themes/theme_visitor.html.twig" %}
+
+{% block title %}
+    Inscription
+{% endblock %}
+{% block main %}
+
+        <h1 class="my-3 text-center display-5 ">Inscription</h1>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-md-6 mx-auto p-4 bg-white shadow">
+               {{ form_start(registrationForm) }}
+               <div class="mb-3">
+                    <label for="registration_form_firstName">Prénom :</label>
+                    <div class="text-danger">{{ form_errors(registrationForm.firstName)}}</div>
+               {{ form_widget(registrationForm.firstName, {'attr':{'class': "form-control"}})}}
+               </div>
+               <div class="mb-3">
+                    <label for="registration_form_lastName">Nom :</label>
+                    <div class="text-danger">{{ form_errors(registrationForm.lastName)}}</div>
+               {{ form_widget(registrationForm.lastName, {'attr':{'class': "form-control"}})}}
+               </div>
+               <div class="mb-3">
+                    <label for="registration_form_email">Email :</label>
+                    <div class="text-danger">{{ form_errors(registrationForm.email)}}</div>
+               {{ form_widget(registrationForm.email, {'attr':{'class': "form-control"}})}}
+               </div>
+               <div class="mb-3">
+                    <label for="registration_form_password_first">Mot de passe :</label>
+                    <div class="text-danger">{{ form_errors(registrationForm.password.first)}}</div>
+               {{ form_widget(registrationForm.password.first, {'attr':{'class': "form-control"}})}}
+               </div>
+               <div class="mb-3">
+                    <label for="registration_form_password_second">Confirmation du mot de passe :</label>
+               {{ form_widget(registrationForm.password.second, {'attr':{'class': "form-control"}})}}
+               </div>
+                 <div class="mb-3">
+                  <div class="text-danger">{{ form_errors(registrationForm.agreeTerms)}}</div>
+                    {{ form_widget(registrationForm.agreeTerms) }}
+                    <label>Lire et accepter <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#" target="-blank">les conditions générales d'utilisation</a> </label>
+                 
+                 </div>
+                 <div class="mb-3">
+                   <button formnovalidate type="submit" class="btn btn-primary">S'inscrire</button>  
+                 </div>
+               
+                    <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                 <div class="modal-dialog modal-dialog-scrollable">
+                   <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Les conditions générales d'utilisation</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero amet saepe a ullam provident illo dicta explicabo distinctio nam quia dolor consectetur porro magnam non expedita nisi deleniti, inventore at debitis officiis magni in eum! Facere cupiditate sapiente, eius eveniet quaerat odio delectus veniam inventore sed laborum libero vitae quia magnam. Voluptatibus exercitationem corporis voluptatum vitae cum? Commodi eaque a autem sapiente maiores totam eveniet quis quos officia harum! Voluptas, fugit reiciendis tempora, laborum dolorem animi recusandae similique consectetur, suscipit laudantium quia illum ex assumenda pariatur corrupti molestias ut? Nihil.
+                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio quia voluptas quibusdam, quod hic ad veniam exercitationem dolorum dolor praesentium ducimus doloribus nemo quae ab deserunt vero quaerat explicabo eaque vitae necessitatibus voluptate omnis. Aliquam reprehenderit placeat obcaecati doloribus at pariatur eos unde labore enim, possimus maiores esse nulla assumenda facere vitae laboriosam eligendi id? Perspiciatis, doloremque quo eum temporibus libero asperiores ipsum odio similique quaerat voluptas commodi praesentium explicabo modi fugit quos esse earum nisi facere aliquam expedita illum, illo et maxime recusandae! Ipsum, nobis error! Nulla, cumque sapiente. 
+                </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary btn-success" 
+                   data-bs-dismiss="modal">Lire et fermer</button>
+                  
+                 </div>
+               </div>
+             </div>
+            </div>
+                
+               {{ form_end(registrationForm) }}  
+            </div>
+        </div>
+        
+</div>
+    
+{% endblock %}
